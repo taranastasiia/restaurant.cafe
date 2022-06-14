@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Open+Sans:wght@400;600;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <title>Есть, где есть в Могилёве</title>
-
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <script src="scripts/wow.min.js"></script>
+    <script>
+        var wow = new WOW;
+        wow.init();
+    </script>
 </head>
 
 <body>
@@ -37,7 +41,6 @@
                     <a class="link__item burger__item_text" href="#main">Главная</a>
                     <a class="link__item burger__item_text" href="#restaurant">Заведения</a>
                     <a class="link__item burger__item_text" href="#form">Форма</a>
-                    <a class="theme themetext link__item burger__item_text" href="">White</a>
                 </div>
             </div>
         </div>
@@ -45,17 +48,17 @@
     <section  class="main animate" id="main">
         <div class="container">
             <div class="main__info">
-                <h1 class="main__title">Есть, где есть в Могилеве</h1>
+                <h1 class="main__title w fadeInDownBig">Есть, где есть в Могилеве</h1>
                 <p class="subtitle main__subtitle">Restoran.Cafe - гид по кафе, барам и ресторанам Могилёва. В каталоге мы
                     собрали описания заведений нашего города</p>
-                <a href="#restaurant" class="button">Посмотреть</a>
+                <a href="#restaurant" class="button button_header wow pulse">Посмотреть</a>
             </div>
         </div>
     </section>
-    <div class="filter">
-        <h2 class="title filter__title">Тип заведения</h2>
+    <div class="filter ">
+        <h2 class="title filter__title wow backInRight">Тип заведения</h2>
         <div class="container">
-            <div class="contant">
+            <div class="contant wow backInLeft">
                 <button class="button green button__type_all" data-filter="all">Все </button>
                 <button class="button green button__type_cafe" data-filter="cafe">Кафе</button>
                 <button class="button green button__type_restaurant" data-filter="restaurant">Ресторан</button>
@@ -66,12 +69,12 @@
         </div>
     </div>
     <section class="catalog" id='restaurant'>
-        <h2 class="title catalog__title">Заведения</h2>
+        <h2 class="title catalog__title wow fadeInDownDig ">Заведения</h2>
         <div class="container">
-            <div class="cards__items">
+            <div class="cards__items wow fadeInUpBig">
             </div>
             <div class="lookmore">
-                <button class='button green'id="load-more">Показать еще</button>
+                <button class='button green lookmore-button wow wobble'id="load-more">Показать еще</button>
             </div>
         </div>
     </section>
@@ -80,10 +83,10 @@
         <div class="container">
            <div class="forms-container">
                 <div class="left-container">
-                    <h2 class="title form__title">Новое заведение в Могилёве? Поделитесь с нами!</h2>
+                    <h2 class="title form__title wow backInLeft">Новое заведение в Могилёве? Поделитесь с нами!</h2>
                 </div>
                 <div class="right-container">
-                    <form class='forms' action="">
+                    <form class='forms wow zoomIn' action="">
                         <input type="text" placeholder="Название заведения">
                         <input type="text" placeholder="Адрес">
                         <input type="text" placeholder="Ссылка на инстаграмм">
@@ -95,7 +98,7 @@
         </div>
     </section>
     <section class="map">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A72c5773bc1fb18cf2f462917c4e1a156f790a62f3d1edc4e9a064753fcc975b0&amp;source=constructor" width="100%" height="600" frameborder="0"></iframe>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A72c5773bc1fb18cf2f462917c4e1a156f790a62f3d1edc4e9a064753fcc975b0&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
     </section>
     <footer class="footer">
         <div class="container">

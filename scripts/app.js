@@ -336,7 +336,7 @@ const renderCard = (name,img,adress,time,tel,link,data) => {
             </p>
             <p class="card__worktime"><span>Время работы:</span> ${time}</p>
             <div class="card__contacts">
-                <a href="callto:${tel}" class="card__phone">Позвонить</a>
+                <a href="callto:${tel}" class=" card__phone">Позвонить</a>
                 <a target="_blank" href="${link}"><img
                         class="card__link" src="images/inst.svg" alt="inst"></a>
             </div>
@@ -418,7 +418,6 @@ moreBtn.addEventListener('click', showNextItem)
 const btn = document.querySelector('.theme')
 
 
-
 function initialState (themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
@@ -440,6 +439,7 @@ btn.addEventListener('click',(e)=> {
 });
 
 
+
 const textInThemeBtn = document.querySelector('.themetext')
 let textBtn = 'White'
 returnNewName = () =>{
@@ -454,6 +454,7 @@ returnNewName = () =>{
 
 }
 textInThemeBtn.addEventListener('click', returnNewName)
+
 const burgerContent = document.querySelector('.burger__content')
 let burgerActive = false;
 
@@ -496,3 +497,17 @@ returnMesege = () => {
 }
 
 submitForm.addEventListener('click', returnMesege)
+
+const clickBurgerItem = document.querySelectorAll('.burger__item_text')
+
+
+const clotheBurger = () =>{
+    burgerActive = true;
+    openBurger()
+}
+
+
+
+clickBurgerItem.forEach((e) =>{
+    e.addEventListener('click', clotheBurger)
+})

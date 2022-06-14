@@ -8,7 +8,8 @@
     --card-color: #252525a9;
     --text-color: white;
     --header-color: white;
-    --burger-color:white;
+    --burger-color: white;
+    --text-hover: #34C759;
 }
 
 .whitemode {
@@ -17,7 +18,8 @@
     --text-color-two: rgb(0, 0, 0);
     --text-color: rgb(255, 255, 255);
     --header-color: #34C759;
-    --burger-color:black;
+    --burger-color: black;
+    --text-hover: white;
 }
 
 html {
@@ -41,6 +43,7 @@ body {
     border-bottom: 1px solid #E5E5E5;
     backdrop-filter: blur(3px);
     z-index: 100;
+
 }
 
 .container {
@@ -60,6 +63,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    animation: flip 1s;
 }
 
 .logo__title {
@@ -67,18 +71,22 @@ body {
     text-transform: uppercase;
     color: var(--header-color);
 }
-.footer__subtitle{
+
+.footer__subtitle {
     color: var(--header-color);
 }
+
 .header__burger {
     /* display: none; */
     display: none;
     flex-direction: column;
 }
-.header__burger:hover{
+
+.header__burger:hover {
     cursor: pointer;
 }
-.burger__item{
+
+.burger__item {
     display: inline-block;
     height: 3px;
     width: 50px;
@@ -86,53 +94,65 @@ body {
     margin-bottom: 10px;
     transition: 0.3s linear;
 }
-.burger__content{
+
+.burger__content {
     display: none;
 }
-.active__burger_content{
+
+.active__burger_content {
     display: flex;
     flex-direction: column;
-    height: 33vh;
+    height: 210px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.63);
     position: fixed;
     left: 0;
-    top:  113px;
+    top: 113px;
 }
-.burger__content .burger__item_text{
+
+.burger__content .burger__item_text {
     font-size: 30px;
     margin-right: 0;
     align-items: center;
     margin-bottom: 30px;
 }
-.activean{
+
+.activean {
     animation: burgeranemation 0.5s linear;
 }
+
 @keyframes burgeranemation {
-    0%{
+    0% {
         transform: scale(0);
     }
-    50%{
+
+    50% {
         transform: scale(0.5);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
-.anactivean{
+
+.anactivean {
     animation: closeburger 0.5s linear;
 }
+
 @keyframes closeburger {
-    0%{
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(0.5);
     }
-    100%{
+
+    100% {
         transform: scale(0);
     }
 }
+
 .links {
     /* margin-left: 450px; */
     max-width: 1000px;
@@ -145,6 +165,11 @@ body {
     text-transform: uppercase;
     margin-right: 30px;
     position: relative;
+}
+
+.link__item:hover {
+    bottom: -5px;
+    color: var(--text-hover);
 }
 
 .link__item:last-child {
@@ -169,17 +194,11 @@ body {
     left: 0;
 }
 
-/* .main:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.5);
-    top: 0;
-    left: 0;
-  } */
 
+  
+.animate {
+    background-color: #00000094;
+}
 .main__info {
     height: 100vh;
     padding: 400px 0;
@@ -194,6 +213,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     font-size: 50px;
+    animation: fadeInDownBig 1s;
 }
 
 .subtitle {
@@ -212,13 +232,27 @@ body {
     border-radius: 43px;
     font-weight: bold;
     color: var(--text-color);
+
 }
 
+.button_header {
+    animation: pulse 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.button_header:hover {
+    background-color: #fff;
+    color: #34C759;
+}
+.button:active {
+    color: white;
+    background-color: #474747;
+    box-shadow: 0px 5px 10px 2px rgba(255, 254, 254, 0.2) inset;
+}
 /* Фильтр */
 
 .filter {
     padding: 40px 0px;
-
 }
 
 .title {
@@ -226,7 +260,8 @@ body {
     text-transform: uppercase;
     font-size: 25px;
     text-align: center;
-    color: var(--text-color-two)
+    color: var(--text-color-two);
+    animation: backInRight 0.9s linear;
 }
 
 .contant {
@@ -235,7 +270,7 @@ body {
     flex-wrap: wrap;
     max-width: 1024px;
     margin: 0 auto;
-
+    animation: backInLeft 0.9s linear;
 }
 
 .green {
@@ -245,25 +280,20 @@ body {
     margin-right: 25px;
     border-radius: 50px;
     outline: none;
-    border: 1px solid #34C759;
-    ;
+    border: none;
     text-decoration: none;
     cursor: pointer;
     position: relative;
 }
 
-.button:last-child {
+.green:last-child {
     margin-right: 0px;
 }
 
-.button:hover {
+.green:hover {
     bottom: -3px;
 }
 
-.button:active {
-    background-color: #038f0a;
-    border: 1px solid #038f0a;
-}
 
 
 
@@ -273,10 +303,15 @@ body {
     padding: 15px 15px;
 }
 
+.catalog__title {
+    animation: fadeInDownBig 0.9s;
+}
+
 .cards__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    animation: fadeInUpBig 0.9s;
 }
 
 .card__item {
@@ -286,13 +321,8 @@ body {
     padding-bottom: 20px;
     overflow: hidden;
     position: relative;
-    /* margin-right: 35px; */
     margin-bottom: 30px;
 }
-
-
-
-
 
 .card__image {
     background-image: url(../images/sushibl.jpg);
@@ -339,6 +369,15 @@ span {
     border-radius: 20px;
     margin-bottom: 15px;
     margin-right: 35px;
+}
+.card__phone:hover {
+    background-color: #fff;
+    color: #34C759;
+}
+.card__phone:active {
+    color: white;
+    background-color: #474747;
+    box-shadow: 0px 5px 10px 2px rgba(255, 254, 254, 0.2) inset;
 }
 
 .card__link {
@@ -393,6 +432,15 @@ span {
     justify-content: center;
 }
 
+.lookmore-button {
+    animation: wobble 2s infinite;
+}
+.lookmore-button:hover {
+    background-color: #fff;
+    color: #34C759;
+    top: 0px;
+}
+
 /* Форма */
 
 .form {
@@ -404,7 +452,6 @@ span {
 }
 
 .left-container {
-    padding: 200px 0;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -415,6 +462,7 @@ span {
 .right-container {
     width: 50%;
     padding: 200px 0;
+
 }
 
 .form__title {
@@ -422,12 +470,14 @@ span {
     margin-bottom: 0;
     font-size: 35px;
     color: var(--text-color-two);
+    animation: backInLeft 0.7s linear;
 }
 
 .forms {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: zoomIn 0.5s;
 }
 
 
@@ -442,7 +492,8 @@ input {
     font-family: 'Montserrat', sans-serif;
     margin: 5px 0;
 }
-.form__sub{
+
+.form__sub {
     padding: 10px;
     width: 60%;
     background-color: #038f0a;
@@ -452,19 +503,22 @@ input {
     cursor: pointer;
 }
 
-.form__sub:hover{
-    color: #d8d8d8;
-    background-color: #0bb313;
+.form__sub:hover {
+    background-color: #fff;
+    color: #34C759;
     box-shadow: 4px 4px 8px 0px rgba(228, 229, 230, 0.2);
 }
-.form__sub:active{
+
+.form__sub:active {
+    color: white;
     background-color: #474747;
     box-shadow: 0px 5px 10px 2px rgba(255, 254, 254, 0.2) inset;
 }
-.form_message{
- margin-top: 10px;
- color: var(--burger-color);
- text-align: center;
+
+.form_message {
+    margin-top: 10px;
+    color: var(--burger-color);
+    text-align: center;
 }
 
 input::placeholder {
@@ -484,9 +538,10 @@ input::placeholder {
     display: none;
 }
 
-.footer{
+.footer {
     border-top: 2px solid white;
 }
+
 .footer__info {
     display: flex;
     padding: 5px 15px;
@@ -544,7 +599,8 @@ input::placeholder {
         width: 70%;
     }
 }
-.link__item_active{
+
+.link__item_active {
     display: inline-block;
     height: 3px;
     width: 50px;
@@ -553,24 +609,30 @@ input::placeholder {
     transition: 0.3s linear;
     transition: 0.4s linear;
 }
-.link__item_active:nth-child(1){
+
+.link__item_active:nth-child(1) {
     transform: rotate(45deg);
     margin: -4px 0px;
 }
-.link__item_active:nth-child(2){
+
+.link__item_active:nth-child(2) {
     display: none;
 }
-.link__item_active:nth-child(3){
+
+.link__item_active:nth-child(3) {
     transform: rotate(-45deg);
 }
+
 @media (max-width: 750px) {
     .links {
-       display: none;
+        display: none;
     }
-    .header__burger{
+
+    .header__burger {
         display: flex;
     }
-    .header__burger:hover .burger__item{
+
+    .header__burger:hover .burger__item {
         background-color: #038f0a;
     }
 
@@ -579,6 +641,7 @@ input::placeholder {
         display: flex;
         padding: 5px 0px;
     }
+
     .card__position {
         right: 0;
         left: 0;
@@ -597,6 +660,7 @@ input::placeholder {
         display: flex;
         padding: 5px 0px;
     }
+
     .menu {
         padding: 15px 3px;
     }
@@ -604,11 +668,15 @@ input::placeholder {
     .logo__title {
         font-size: 18px;
     }
-    
+
     .cards__items {
         justify-content: center;
     }
-    .card__image{
+
+    .card__image {
         object-fit: cover;
+    }
+    .active__burger_content { 
+        top: 94px;
     }
 }
