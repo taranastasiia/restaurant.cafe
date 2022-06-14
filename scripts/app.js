@@ -392,8 +392,11 @@ function sliderBgFirstWindow(){
     }
 
    numimg++
-    firstWindow.style.background = `url(images/${numimg}.jpg)`;
+    firstWindow.style.background = ` url(images/${numimg}.jpg) `;
     firstWindow.style.backgroundSize = 'cover'
+
+   
+   
 }
 
 const moreBtn = document.querySelector('#load-more')
@@ -403,13 +406,11 @@ let a = 0;
 
 
 showNextItem = () => {
-    
     const cardItem = document.querySelectorAll('.card__item')
     for(let i =0; i<3; i++){
         cardItem[a++].classList.remove('hidden')
         cardItem[a++].classList.add('unhiden')
     }
-
 }
 window.onload = showNextItem
 moreBtn.addEventListener('click', showNextItem)
